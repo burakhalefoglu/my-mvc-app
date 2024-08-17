@@ -1,6 +1,11 @@
 const todoModel = require('../models/todoModel');
 
 module.exports = {
+    getDashboard: (req, res) => {
+        var message = 'Hello World!';
+        res.render('dashboard', { message });
+
+    },
     getTodos: (req, res) => {
         todoModel.getAllTodos((err, todos) => {
             if (err) {
