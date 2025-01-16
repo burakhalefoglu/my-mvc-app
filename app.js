@@ -3,7 +3,7 @@ const app = express();
 const todoRoutes = require('./routes/todoRoutes');
 
 app.set('view engine', 'ejs');
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true })); // öğren
 
 app.use('/', todoRoutes);
 

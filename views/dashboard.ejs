@@ -6,6 +6,8 @@
     <title>Todo App</title>
 </head>
 <body>
-    <%= message %>
+    <% todos.forEach(todo => { %>
+            <%= todo.title %>
+    <% }) %>
 </body>
 </html>

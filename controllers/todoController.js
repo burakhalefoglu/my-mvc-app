@@ -2,8 +2,11 @@ const todoModel = require('../models/todoModel');
 
 module.exports = {
     getDashboard: (req, res) => {
-        var message = 'Hello World!';
-        res.render('dashboard', { message });
+        var messages = 'Hello World!';
+        // veri tababıba bağlan.
+        todoModel.getAllTodos((err, todos) => {
+            res.render('dashboard', { todos });
+        });
 
     },
     getTodos: (req, res) => {
@@ -30,9 +33,11 @@ module.exports = {
         todoModel.completeTodo(id, (err) => {
             if (err) {
                 res.status(500).send('Database error');
+                alert('Database error');
             } else {
                 res.redirect('/');
+                alert('Database error');
             }
         });
-    }
+    },
 };
